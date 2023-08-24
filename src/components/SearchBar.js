@@ -1,15 +1,15 @@
 import React from 'react'
 import { useState , useEffect} from 'react';
 
-const SearchBar = ({getFavorites}) => {
+const SearchBar = ({getFavorites, searchValue, setSearchValue}) => {
 
-  const [searchTerm, setSearchTerm] = useState("");
+  // const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(async()=>{
+//   useEffect(async()=>{
 
-    getFavorites(searchTerm);
+//     getFavorites(searchTerm);
 
- },[searchTerm])
+//  },[searchTerm])
 
   return (
     <div>
@@ -18,8 +18,8 @@ const SearchBar = ({getFavorites}) => {
           type="search" 
           placeholder='search..' 
           id='search' 
-          value= {searchTerm}
-          onChange={(e)=>setSearchTerm(e.target.value)}
+          value= {searchValue}
+          onChange={(e)=>setSearchValue(e.target.value)}
         /> 
       </div>
     </div>

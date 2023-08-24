@@ -37,7 +37,12 @@ function App() {
     let newFavorites;
     if(favouriteQuotes.length > 0)
     {
-       newFavorites = favouriteQuotes.find((favorite, index)=>{favorite.author.includes(searchValue)})
+       newFavorites = favouriteQuotes.map((favorite, index)=>{
+        console.log("favorite movie = "+JSON.stringify(favorite));
+        if(favorite.author.includes(searchTerm))
+          return favorite;
+        
+      })
        console.log("newFavorites = "+JSON.stringify(newFavorites))
        const newFavouriteList = [...newFavorites];
        setFavouriteQuotes(newFavouriteList);
@@ -51,6 +56,12 @@ function App() {
     getRandomQuote();
 
   },[])
+
+  useEffect(()=>{
+
+    getFavoritesByNameAuthor(searchTerm);
+
+ },[searchTerm])
 
 
   
@@ -66,7 +77,7 @@ function App() {
       <Header header = {"Abra Test"}/>
       <Generator quoteData = {quote} addToFavourite = {addQuoteToFavourites} getNewRandomQuote = {getRandomQuote} />
       <Header header = {"Favorites Quotes List"}/>
-      {/* <SearchBar getFavorites = {getFavoritesByNameAuthor}/> */}
+      <SearchBar getFavorites = {getFavoritesByNameAuthor} serchValue = {searchTerm} setSearchValue = {setSearchTerm}/>
       <FavoritesList favoritesQuates = {favouriteQuotes} />
     </div>
   );
