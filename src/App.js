@@ -12,7 +12,7 @@ function App() {
 
   const [quote, setQuote] = useState({});
   const [favouriteQuotes, setFavouriteQuotes] = useState([]);
-  // const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   async function getRandomQuote()
   {
