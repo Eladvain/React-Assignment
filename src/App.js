@@ -32,18 +32,19 @@ function App() {
     setQuote(data[0]);
   }
 
-  // async function getFavoritesByNameAuthor(searchValue)
-  // {
-  //   let newFavorites;
-  //   if(favouriteQuotes.length > 0)
-  //   {
-  //      newFavorites = favouriteQuotes.find((favorite, index)=>{favorite.author.includes(searchValue)})
-  //   }
+  async function getFavoritesByNameAuthor(searchValue)
+  {
+    let newFavorites;
+    if(favouriteQuotes.length > 0)
+    {
+       newFavorites = favouriteQuotes.find((favorite, index)=>{favorite.author.includes(searchValue)})
+       console.log("newFavorites = "+JSON.stringify(newFavorites))
+       const newFavouriteList = [...newFavorites];
+       setFavouriteQuotes(newFavouriteList);
+    }
     
-  //   console.log("newFavorites = "+JSON.stringify(newFavorites))
-  //   const newFavouriteList = [...newFavorites];
-  //   setFavouriteQuotes(newFavouriteList);
-  // }
+    
+  }
 
   useEffect(()=>{
 
