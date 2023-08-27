@@ -35,18 +35,22 @@ function App() {
 
   async function getFavoritesByNameAuthor(searchValue)
   {
+    console.log("in getFavoritesByNameAuthor")
     let newFavorites;
+    let quotes1 = [];
     if(favouriteQuotes.length > 0)
     {
-       newFavorites = favouriteQuotes.map((favorite, index)=>{
+        favouriteQuotes.map((favorite, index)=>{
         console.log("favorite movie = "+JSON.stringify(favorite));
-        if(favorite.author.includes(searchTerm))
-          return favorite;
-        
+        if(favorite['author'].includes(searchValue)){
+          console.log("search value inludessss")
+          quotes1.push(favorite);
+        }
+          
       })
-       console.log("newFavorites = "+JSON.stringify(newFavorites))
-       const newFavouriteList = [...newFavorites];
-        setQuoteBySearch(newFavouriteList);
+       console.log("newFavorites = "+JSON.stringify(quotes1));
+       const newFavouriteList = [...quotes1];
+        setQuoteBySearch(quotes1);
     }
     
     
