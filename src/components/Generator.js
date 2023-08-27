@@ -1,4 +1,5 @@
 import React from 'react'
+import generator from '../CSS/generator.css'
 
 const Generator = ({quoteData, addToFavourite, getNewRandomQuote}) => {
 
@@ -10,20 +11,21 @@ const Generator = ({quoteData, addToFavourite, getNewRandomQuote}) => {
     await getNewRandomQuote();
   }
 
-  console.log("in generator = "+JSON.stringify(quoteData))
+  // console.log("in generator = "+JSON.stringify(quoteData))
   return (
     <div className='generator-part'>
       <div className='description'>
-      <label className='quote'>quote : {quoteData.quote}</label>
+      <label className='label'>quote : </label>
+      <p>{quoteData.quote}</p>
       <br/>
-      <label>Author : {quoteData.author}, </label>
-      <label>Category : {quoteData.category}</label>
+      <label className='label'>Author :  </label>
+      <p>{quoteData.author} </p>
+      <label className='label'>Category : </label>
+      <p>{quoteData.category}</p>
       </div>
       <div className='buttons'>
-        <button onClick={addTo}>Like!</button>
-        <button onClick={newRandom}>New Quote!</button>
-        
-
+        <button className='button' onClick={addTo}>Like!</button>
+        <button className='button' onClick={newRandom}>New Quote!</button>
       </div>
     </div>
   )

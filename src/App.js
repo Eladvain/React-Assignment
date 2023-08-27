@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import './App.css';
+// import './App.css';
 import FavoritesList from './components/FavoritesList';
 import Generator from './components/Generator';
 import Header from './components/Header';
@@ -79,7 +79,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header header = {"Abra Test"}/>
+      <div className='headline'>
+        <Header header = {"Abra Test"}/>
+      </div>
       <Generator quoteData = {quote} addToFavourite = {addQuoteToFavourites} getNewRandomQuote = {getRandomQuote} />
       <Header header = {"Favorites Quotes List"}/>
       <SearchBar getFavorites = {getFavoritesByNameAuthor} serchValue = {searchTerm} setSearchValue = {setSearchTerm}/>
