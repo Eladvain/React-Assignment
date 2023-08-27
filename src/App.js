@@ -12,6 +12,7 @@ function App() {
 
   const [quote, setQuote] = useState({});
   const [favouriteQuotes, setFavouriteQuotes] = useState([]);
+  const [quotesBySearch, setQuoteBySearch] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   async function getRandomQuote()
@@ -45,7 +46,7 @@ function App() {
       })
        console.log("newFavorites = "+JSON.stringify(newFavorites))
        const newFavouriteList = [...newFavorites];
-       setFavouriteQuotes(newFavouriteList);
+        setQuoteBySearch(newFavouriteList);
     }
     
     
@@ -78,7 +79,7 @@ function App() {
       <Generator quoteData = {quote} addToFavourite = {addQuoteToFavourites} getNewRandomQuote = {getRandomQuote} />
       <Header header = {"Favorites Quotes List"}/>
       <SearchBar getFavorites = {getFavoritesByNameAuthor} serchValue = {searchTerm} setSearchValue = {setSearchTerm}/>
-      <FavoritesList favoritesQuates = {favouriteQuotes} />
+      <FavoritesList favoritesQuates = {favouriteQuotes} searchValue = {searchTerm} quotesBySearchValue = {quotesBySearch}/>
     </div>
   );
 }

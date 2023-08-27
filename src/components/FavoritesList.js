@@ -2,14 +2,20 @@ import React from 'react'
 import Favorite from './Favorite'
 import Header from './Header'
 
-const FavoritesList = ({favoritesQuates}) => {
+const FavoritesList = ({favoritesQuates, searchValue, quotesBySearchValue}) => {
   return (
     <div>
-      {favoritesQuates.map((quote, index)=>(
+      {searchValue === "" ? (
+      favoritesQuates.map((quote, index)=>(
         <Favorite quoteItem ={quote} key = {index}  />
-      ))}
+      ))) : (
+      quotesBySearchValue.map((quote, index)=>(
+        <Favorite quoteItem ={quote} key = {index}  />
+      )))
+      }
     </div>
   )
+  
 }
 
 export default FavoritesList
