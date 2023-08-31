@@ -1,4 +1,14 @@
 .header{
   font-size: 50px;
+  /* text-align: center; */
+  /* align-items: center; */
+  background-color: aqua;
+  /* width: 30%; */
+}
+
+.headers{
   text-align: center;
+  align-items: center;
+  width: 30%;
+  margin-left: 35%;
 }
