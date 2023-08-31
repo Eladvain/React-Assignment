@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState , useEffect} from 'react';
+import searchBar from '../CSS/searchBar.css'
 
 const SearchBar = ({getFavorites, searchValue, setSearchValue}) => {
 
@@ -17,7 +18,7 @@ const SearchBar = ({getFavorites, searchValue, setSearchValue}) => {
         <input 
           type="search" 
           placeholder='search..' 
-          id='search' 
+          id='searchBar' 
           value= {searchValue}
           onChange={(e)=>setSearchValue(e.target.value)}
         /> 
